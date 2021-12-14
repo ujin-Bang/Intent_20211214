@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
             val myIntent = Intent(this, ViewMessageActivity::class.java)
            
 //            필요 데이터를 첨부하는 코드
-            myIntent.putExtra("message",inputMessage)
+            myIntent.putExtra("message",inputMessage) //name은 아무렇게나 써도 상관없음
             startActivity(myIntent)
 
         }
