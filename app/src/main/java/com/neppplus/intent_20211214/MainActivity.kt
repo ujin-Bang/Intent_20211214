@@ -6,6 +6,9 @@ import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+
+    val REQ_CODE_FOR_NICKNAME = 1000
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -32,6 +35,17 @@ class MainActivity : AppCompatActivity() {
 //            필요 데이터를 첨부하는 코드
             myIntent.putExtra("message",inputMessage) //name은 아무렇게나 써도 상관없음
             startActivity(myIntent)
+
+        }
+
+        btnEditNickname.setOnClickListener {
+
+//            닉네임을 변경하기 위한 화면 이동. (Intent 3 예시)
+
+            val myIntent = Intent(this,EditNicknameActivity::class.java)
+
+//            넘어갔다가 (어떤 데이터)를 데이터를 들고 "돌아올 것이다" 명시.
+            startActivityForResult( myIntent, REQ_CODE_FOR_NICKNAME)
 
         }
     }
