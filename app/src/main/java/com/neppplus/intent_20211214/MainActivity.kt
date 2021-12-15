@@ -1,6 +1,7 @@
 package com.neppplus.intent_20211214
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -47,6 +48,18 @@ class MainActivity : AppCompatActivity() {
 
 //            넘어갔다가 (어떤 데이터)를 데이터를 들고 "돌아올 것이다" 명시.
             startActivityForResult(myIntent, REQ_CODE_FOR_NICKNAME)
+
+        }
+
+        btnDial.setOnClickListener {
+
+//            안드로이드 전화 화면으로 이동.
+
+//            제공할 정보 2가지 . 1) 어떤 화면으로 갈 것인가? (ACTION) / 2) 세부 정보 (전화걸기 - 어디로 전화?) -uri
+
+            val myUri = Uri.parse("tel:01022223333")
+            val myIntent = Intent( Intent.ACTION_DIAL, myUri )
+            startActivity(myIntent)
 
         }
     }
