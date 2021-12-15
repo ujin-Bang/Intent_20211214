@@ -55,9 +55,12 @@ class MainActivity : AppCompatActivity() {
 
 //            안드로이드 전화 화면으로 이동.
 
+//            입력한 전화번호 저장
+            val inputPhoneNum = edtPhoneNum.text.toString()
+
 //            제공할 정보 2가지 . 1) 어떤 화면으로 갈 것인가? (ACTION) / 2) 세부 정보 (전화걸기 - 어디로 전화?) -uri
 
-            val myUri = Uri.parse("tel:01022223333")
+            val myUri = Uri.parse("tel:${inputPhoneNum}")
             val myIntent = Intent( Intent.ACTION_DIAL, myUri )
             startActivity(myIntent)
 
